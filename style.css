@@ -72,25 +72,29 @@
     --font-primary: "Familjen Grotesk", sans-serif;
     --font-secondary: "Azeret Mono", monospace;
 
-    --text-base-size: 1em;
-    --text-scale-ratio: 1.2;
 
-    --text-xs: calc(1em / (var(--text-scale-ratio) * var(--text-scale-ratio)));
-    --text-sm: calc(1em / var(--text-scale-ratio));
-    --text-md: calc(1em * var(--text-scale-ratio));
-    --text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio));
-    --text-xl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
-    --text-xxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
-    --text-xxxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+    --base-fs: 1rem;
+    --line-height: 0.55;
 
-    --line-height-xs: calc(1.2 * var(--text-xs));
-    --line-height-sm: calc(1.2 * var(--text-sm));
-    --line-height-md: calc(1.2 * var(--text-md));
-    --line-height-lg: calc(1.2 * var(--text-lg));
-    --line-height-xl: calc(1.2 * var(--text-xl));
-    --line-height-xxl: calc(1.2 * var(--text-xxl));
-    --line-height-xxxl: calc(05. * var(--text-xxxl));
-    
+    --text-xs: 0.694rem;
+    --text-s: 0.833rem;
+    --text-m: 1rem;
+    --text-l: 1.2rem;
+    --text-xl: 1.44rem;
+    --text-2xl: 1.728rem;
+    --text-3xl: 2.074rem;
+    --text-4xl: 2.488rem;
+
+    --line-height-xs: 1.244rem;
+    --line-height-s: 1.383rem;
+    --line-height-m: 1.55rem;
+    --line-height-l: 1.75rem;
+    --line-height-xl: 1.99rem;
+    --line-height-2xl: 2.278rem;
+    --line-height-3xl: 2.624rem;
+    --line-height-4xl: 3.038rem;
+
+
     
     /* ----------- font weight ----------- */
 
@@ -151,8 +155,8 @@
 
 h1{
     font-family: var(--font-primary);
-    font-size: var(--text-xxxl);
-    line-height: var(--line-height-xxxl);
+    font-size: var(--text-4xl);
+    line-height: var(--line-height-4xlxl);
     color: var(--font--principal);
     font-weight: var(--regular);
     text-transform: uppercase;
@@ -160,7 +164,8 @@ h1{
 
 h2{
     font-family: var(--font-primary);
-    font-size: var(--text-sm);
+    font-size: var(--text-s);
+    line-height: var(--line-height-s);
     color: var(--font--principal);
     font-weight: var(--medium);
     text-transform: uppercase;
@@ -171,10 +176,30 @@ h2{
     
 }
 
+h3{
+    font-family: var(--font-primary);
+    font-size: var(--text-2xl);
+    line-height: var(--line-height-2xl);
+    color: var(--font--principal);
+    font-weight: var(--regular);
+    text-transform: uppercase;
+}
+
+h4{
+    font-family: var(--font-primary);
+    font-size: var(--text-m);
+    line-height: var(--line-height-m);
+    color: var(--font--principal);
+    font-weight: var(--medium);
+    text-transform: uppercase;
+    margin-top: 16px;
+    
+}
+
 p{
     font-family: var(--font-secondary);
-    font-size: var(--text-sm);
-    line-height: var(--line-height-md);
+    font-size: var(--text-s);
+    line-height: var(--line-height-s);
     color: var(--font--secondary);
     font-weight: var(--light);
 }
@@ -188,6 +213,7 @@ header{
     width: 100%;
     background-color: var(--surface--01);
     padding: 0px 80px;
+    z-index: 1000;
 }
 
 nav{
@@ -195,10 +221,14 @@ nav{
     flex-direction: row;
     width: 100%;
     align-items: center;
-    height: 56px;
-    margin-top: var(--space-sm);
+    padding: 16px 0px;
 }
 
+li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 
 .linksWrapper{
@@ -217,19 +247,12 @@ nav{
     
 }
 
-ol li{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    list-style: none;
-    
-    
-    
-}
+
 
 a{
     font-family: var(--font-primary);
-    font-size: var(--text-sm);
+    font-size: var(--text-s);
+    line-height: var(--line-height-s);
     color: var(--font--principal);
     font-weight: var(--text-regular);
     text-decoration: none;
@@ -267,6 +290,8 @@ button{
     background-color: var(--surface--01);
     border-style: none;
     padding: 0px;
+    width: 20px;
+    height: 20px;
 }
 
 .material-symbols-outlined {
@@ -277,7 +302,10 @@ button{
   'opsz' 20
 }
 
-.sectionWrapper{
+
+/* ------------- hero ------------- */
+
+.hero{
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -285,9 +313,10 @@ button{
     padding: 180px 80px 80px;
 }
 
+
 .leftWrapper{
-    display: flex;
-    flex-direction: row;
+    display: flex ;
+    flex-direction: column;
     width: 100%;
 }
 
@@ -297,28 +326,27 @@ button{
     width: 100%;
 }
 
-.marquee{
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    width: 50%;
+.itemMarquee{
+    display: inline;
+    list-style: none;
+    font-family: var(--font-secondary);
+    font-size: var(--text-xs);
+    color: var(--accent--01);
 }
 
 .marqueeWrapper{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    
-    animation: marquee 15s linear infinite;
-    color: var(--accent--01);
-    font-family: var(--font-secondary);
-    font-size: var(--text-sm);
-    color: var(--accent--01);
-    margin-top: var(--space-sm);
-    
-  }
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+    white-space: nowrap;
+    position: relative;
 
+}
 
+.marqueeContainer{
+    width: 20vw;
+    overflow: hidden;
+    padding-top: 16px;
+}
 
 @keyframes marquee {
     0% {
@@ -343,11 +371,156 @@ button{
 
 .smallP{
     font-size: var(--text-xs);
+    line-height: var(--line-height-xs);
     margin-top: var(--space-xs);
+    width: 40%;
 }
 
 .goldText{
     font-size: var(--text-xs);
+    font-weight: var(--medium);
     color: var(--font--principal);
     margin-top: var(--space-md);
+    text-transform: uppercase;
+}
+
+/* ------------- video section ------------- */
+
+.videoPlayer{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ------------- description ------------- */
+
+.description{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: var(--surface--00);
+    padding: 80px;
+}
+
+.infoWrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.paragraph{
+
+margin-top: 24px;
+width: 60%;
+
+}
+
+/* ------------- card ------------- */
+
+.cardContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 80px;
+    background-color: var(--surface--00);
+    gap: 80px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--surface--02);
+    padding: 80px 32px;
+    border-radius: 4px;
+    width: 360px;
+    text-align: center;
+}
+
+.cardIcon{
+    width: 96px;
+    height: 96px;
+}
+
+.infoCard{
+    margin-top: 16px;
+}
+
+/* ------------- skills ------------- */
+
+.skillContainer{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--surface--00);
+    width: 100%;
+    padding: 0px 80px 40px;
+}
+
+.skillWrapper{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-bottom: 1px solid var(--stroke-dark--01); 
+    padding: 40px 0px;
+}
+
+.skillLeft{
+    font-display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.skillRight{
+    font-display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.skill{
+    display: flex;
+    flex-direction: row;
+}
+
+.styleNumber{
+    font-family: var(--font-secondary);
+    color: var(--font--principal);
+    font-size: var(--text-l);
+    line-height: var(--line-height-l);
+    text-transform: uppercase;
+    font-feature-settings: "zero" 1;
+    margin-right: 24px;
+}
+
+.styleText{
+    font-family: var(--font-primary);
+    color: var(--font--principal);
+    font-size: var(--text-l);
+    line-height: var(--line-height-l);
+    text-transform: uppercase;
+}
+
+.tagContainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.tag{
+    font-size: var(--text-xs);
+    line-height: var(--line-height-xs);
+    font-weight: var(--medium);
+    background-color: var(--surface--03);
+    color: var(--font--principal);
+    padding: 4px 8px;
+    border-radius: 400px;
+    text-transform: uppercase;
+    margin: var(--space-md) var(--space-sm) var(--space-sm) 0px ;
 }
