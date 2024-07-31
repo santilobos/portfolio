@@ -286,12 +286,23 @@ a{
 }
 
 button{
-    color: var(--item--01);
     background-color: var(--surface--01);
+    color: var(--item--01);
     border-style: none;
     padding: 0px;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+}
+
+button:hover{
+    background-color: var(--item--01);
+    color: var(--surface--01);
+    border-style: none;
+    padding: 0px;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
 }
 
 .material-symbols-outlined {
@@ -326,6 +337,20 @@ button{
     width: 100%;
 }
 
+.marqueeContainer{
+    width: 20vw;
+    overflow: hidden;
+    padding-top: 16px;
+}
+
+.marqueeWrapper{
+    display: inline-block;
+    animation: marquee1 20s linear infinite;
+    white-space: nowrap;
+    position: relative;
+
+}
+
 .itemMarquee{
     display: inline;
     list-style: none;
@@ -334,21 +359,10 @@ button{
     color: var(--accent--01);
 }
 
-.marqueeWrapper{
-    display: inline-block;
-    animation: marquee 20s linear infinite;
-    white-space: nowrap;
-    position: relative;
 
-}
 
-.marqueeContainer{
-    width: 20vw;
-    overflow: hidden;
-    padding-top: 16px;
-}
 
-@keyframes marquee {
+@keyframes marquee1 {
     0% {
         transform: translateX(0);
     }
@@ -519,8 +533,54 @@ width: 60%;
     font-weight: var(--medium);
     background-color: var(--surface--03);
     color: var(--font--principal);
-    padding: 4px 8px;
+    padding: 4px 14px;
     border-radius: 400px;
     text-transform: uppercase;
     margin: var(--space-md) var(--space-sm) var(--space-sm) 0px ;
+}
+
+
+
+/* ------------- marquee ------------- */
+
+.containerMarquee{
+    background-color: var(--surface--00);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    padding: 40px 80px;
+}
+
+.wrapperMarquee{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+   
+}
+
+.wrapperList{
+    display: inline-block;
+    animation: marquee2 15s linear infinite;
+    white-space: nowrap;
+
+}
+
+.itemMarquee2{
+    display: inline;
+    list-style: none;
+    font-family: var(--font-secondary);
+    font-size: var(--text-xs);
+    color: var(--accent--01);
+    padding-right: 8px;
+}
+
+@keyframes marquee2 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-20%);
+    }
 }
