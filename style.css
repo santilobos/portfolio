@@ -52,25 +52,12 @@
     --item--01: #FCF1CC;
     --stroke-dark--01: #2D2D2D;
 
-    /*
-    --surface--00: #F4F4F4;
-    --surface--01: #E6E6E6;
-    --surface--02: #E6E6E6;
-    --surface--03: #E6E6E6;
-    --accent--01: #CC01DB;
-    --font--principal: #555555;
-    --font--secondary: #898989;
-    --item--01: #555555;
-    --item--02: #F4F4F4;
-    --stroke-dark--01: #E6E6E6; 
-
-    */
-
 
     /* ----------- font size ----------- */
 
     --font-primary: "Familjen Grotesk", sans-serif;
     --font-secondary: "Azeret Mono", monospace;
+    --icon-font: 'Material Symbols Outlined';
 
 
     --base-fs: 1rem;
@@ -103,6 +90,7 @@
     --light: 300;
     --regular: 400;
     --medium: 500;
+    --bold: 700;
   
 
 
@@ -134,7 +122,7 @@
     --stroke-dark--01: #2D2D2D;
 }
 
-/*
+
 .lightTheme{
     --surface--00: #F4F4F4;
     --surface--01: #E6E6E6;
@@ -147,11 +135,14 @@
     --item--02: #F4F4F4;
     --stroke-dark--01: #E6E6E6; 
 }
-    */
+
 
 
   
 /* --------------------------- elementos --------------------------- */
+
+
+
 
 /* ------------- textos ------------- */
 
@@ -329,7 +320,7 @@ button:hover{
   'FILL' 0,
   'wght' 400,
   'GRAD' 0,
-  'opsz' 20
+  'opsz' 20;
 }
 
 
@@ -478,9 +469,10 @@ width: 60%;
     text-align: center;
 }
 
-.cardIcon{
+.cardIcons{
     width: 96px;
     height: 96px;
+    fill: var(--item--01);
 }
 
 .infoCard{
@@ -795,6 +787,25 @@ footer{
 .iconSize{
     font-family: var(--font-secondary);
     font-size: var(--text-xl);
-    font-weight: var(--medium);
-    color: var(--font--principal);
+    font-weight: var(--regular);
+    line-height: var(--line-height-xl);
+    color: var(--font--secondary);
+    font-feature-settings: "zero" 1;
 }
+
+
+
+
+.material-symbols-outlined.iconStyle{
+    font-variation-settings:
+        'FILL' 0,
+        'wght' var(--bold),
+        'GRAD' 0,
+        'opsz' 24;
+    font-family: var(--icon-font);
+    color: var(--font--secondary);
+    font-size: var(--text-xl);
+    line-height: var(--line-height-l);
+}
+
+
