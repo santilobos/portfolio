@@ -129,8 +129,8 @@
     --surface--02: #E6E6E6;
     --surface--03: #E6E6E6;
     --accent--01: #CC01DB;
-    --font--principal: #555555;
-    --font--secondary: #898989;
+    --font--principal: #3e3e3e;
+    --font--secondary: #636363;
     --item--01: #555555;
     --item--02: #F4F4F4;
     --stroke-dark--01: #E6E6E6; 
@@ -142,7 +142,9 @@
 /* --------------------------- elementos --------------------------- */
 
 
-
+body{
+    background-color: var(--surface--01);
+}
 
 /* ------------- textos ------------- */
 
