@@ -144,6 +144,7 @@
 
 body{
     background-color: var(--surface--01);
+    
 }
 
 /* ------------- textos ------------- */
@@ -271,16 +272,36 @@ a{
     text-transform: uppercase;
 }
 
-.about{
+.aboutOn{
     color: var(--font--principal);
 }
-.resume{
+
+.aboutOff{
     color: var(--font--secondary);
 }
-.linkedin{
+
+.resumeOn{
+    color: var(--font--principal);
+}
+
+.resumeOff{
     color: var(--font--secondary);
 }
-.github{
+
+.linkedinOn{
+    color: var(--font--principal);
+}
+
+.linkedinOff{
+    color: var(--font--secondary);
+}
+
+
+.githubOn{
+    color: var(--font--principal);
+}
+
+.githubOff{
     color: var(--font--secondary);
 }
 
@@ -315,6 +336,7 @@ button:hover{
     width: 24px;
     height: 24px;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 .material-symbols-outlined {
@@ -723,8 +745,8 @@ footer{
 
 .footerIntro{
     font-family: var(--font-primary);
-    font-size: var(--text-2xl);
-    line-height: var(--line-height-2xl);
+    font-size: var(--text-3xl);
+    line-height: var(--line-height-3xl);
     color: var(--font--principal);
     font-weight: var(--regular);
     text-transform: uppercase;
