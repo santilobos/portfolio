@@ -23,41 +23,46 @@
 
     <header>
         <nav>
-            <h2><a href="./index.html">Santiago Lobos</a></h2>
-            <div class="linksWrapper">
-                <div class="listWrapper">
-                    <ol>
-                        <li>
-                            <a href="./index.html" class="aboutOff">About</a>
-                            <div></div>
-                        </li>
-                            
-                    </ol>
-                    <ol>
-                        <li>
-                            <a href="./resume.html" class="resumeOn">Resume</a>
-                            <div class="dot"></div>
-                        </li>
-                    </ol>
-                    <ol>
-                        <li>
-                            <a href="https://www.linkedin.com/in/santi-lobos/" target="_blank" class="linkedinOff">Linkedin</a>
-                            <div></div>
-                        </li>
-                    </ol>
-                    <ol>
-                        <li>
-                            <a href="https://github.com/santilobos" target="_blank" class="githubOff">Github</a>
-                            <div></div>
-                        </li>
-                    </ol>
+            <div class="logoWrapper">
+                <div class="linkComponent">
+                    <h2 id="logo1440"><a href="./index.html">Santiago Lobos</a></h2>
+                    <h2 id="logo375"><a href="./index.html">Santi Lobos</a></h2>
+                    <div class="dotEmpty"></div>
+                </div>
+            </div>
+
+            <div class="linksButton">
+
+                <div class="linkWrapper">
+
+                    <div class="linkComponent">
+                        <a href="./index.html" class="aboutOff">About</a>
+                        <div></div>
+                    </div>
+
+                    <div class="linkComponent">
+                        <a href="./resume.html" class="resumeOn">Resume</a>
+                        <div  class="dot"></div>
+                    </div>
+
+                    <div class="linkComponent">
+                        <a id="linkedin1440" href="https://www.linkedin.com/in/santi-lobos/" class="linkedinOff" target="_blank">Linkedin</a>
+                        <a id="linkedin375" href="https://www.linkedin.com/in/santi-lobos/" class="linkedinOff">IN</a>
+                        <div></div>
+                    </div>
+
+                    <div id="gitHubButton" class="linkComponent">
+                        <a href="https://github.com/santilobos" class="githubOff" target="_blank">Github</a>
+                        <div></div>
+                    </div>
+
                 </div>
                 <div class="buttonWrapper">
                     <button id="icon" onclick="changeTheme()">
                         <span id="themeIcon" class="material-symbols-outlined">light_mode</span>
                     </button>
                     <script src="script.js"></script>
-                </div> 
+                </div>
             </div>
         </nav>
     </header>
