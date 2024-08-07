@@ -1,3 +1,6 @@
+
+
+
 let icon = document.getElementById("themeIcon");
 
 // Función para aplicar el tema guardado en localStorage
@@ -24,7 +27,5 @@ function changeTheme() {
         localStorage.setItem('theme', 'darkTheme');
     }
 }
-
-
 
 

@@ -170,7 +170,7 @@ body{
 
 h1{
     font-family: var(--font-primary);
-    font-size: clamp(var(--text-l), 2.5vw, var(--text-5xl));
+    font-size: clamp(var(--text-l), 2vw, var(--text-4xl));
     color: var(--font--principal);
     font-weight: var(--regular);
     text-transform: uppercase;
@@ -233,7 +233,6 @@ h6{
 p{
     font-family: var(--font-secondary);
     font-size: var(--text-s);
-    font-size: clamp(var(--text-s), 1.5vw, var(--text-m));
     line-height: var(--line-height-s);
     color: var(--font--secondary);
     font-weight: var(--light);
@@ -250,8 +249,11 @@ svg path rect{
 
 
 header{
+    display: flex;
+    flex-direction: row;
     position: fixed;
     width: 100%;
+    justify-content: center;
     background-color: var(--surface--01);
     padding: var(--space-s) var(--space-big02) var(--space-xs);
     z-index: 1000;
@@ -262,6 +264,7 @@ nav{
     display: flex;
     flex-direction: row;
     width: 100%;
+    max-width: 1440px;
     align-items: center;
     
 }
@@ -413,20 +416,7 @@ button:hover{
   
 }
 
-@media (max-width: 3000px) and (min-width: 1441px){
 
-    header{
-        display: flex;
-        flex-direction: row;
-        padding: var(--space-s) var(--space-big02) var(--space-xs);
-        justify-content: center;
-    }
-
-    nav{
-        width: 1440px;
-    }
-
-}
 
 @media (max-width: 920px) and (min-width: 768px){
 
@@ -789,26 +779,39 @@ video{
 
 /* ------------- description ------------- */
 
+.descriptionWrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--surface--00);
+}
+
 .description{
     display: flex;
     flex-direction: row;
     width: 100%;
+    max-width: 1440px;
     background-color: var(--surface--00);
     padding: var(--space-big02);
-    
 }
-
-
 
 .paragraph{
 
 margin-top: var(--space-m);
 width: 60%;
-
-
 }
 
+
+
 /* ------------- card ------------- */
+
+.cardContainerWrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: var(--surface--00);
+}
 
 .cardContainer{
     display: flex;
@@ -817,6 +820,7 @@ width: 60%;
     padding: var(--space-big02);
     background-color: var(--surface--00);
     gap: var(--space-big02);
+    max-width: 1440px;
     
 }
 
@@ -848,11 +852,19 @@ width: 60%;
 
 /* ------------- skills ------------- */
 
+.skillContainerWrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: var(--surface--00);
+}
+
 .skillContainer{
     display: flex;
     flex-direction: column;
     background-color: var(--surface--00);
     width: 100%;
+    max-width: 1440px;
     padding: var(--space-none) var(--space-big02) var(--space-xl);
     
 }
@@ -939,11 +951,16 @@ width: 60%;
 
 /* ------------- marquee ------------- */
 
+.cutter{
+    width: 1280px;
+    overflow: hidden;
+}
+
 .containerMarquee{
     background-color: var(--surface--00);
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     width: 100vw;
     padding: var(--space-xl) var(--space-big02);
     
@@ -954,9 +971,10 @@ width: 60%;
     justify-content: center;
     width: 100%;
     overflow: hidden;
-    
-   
+    max-width: 1440px;
 }
+
+
 
 .wrapperList{
     display: inline-block;
@@ -990,7 +1008,8 @@ width: 60%;
 
 .techStack{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     background-color: var(--surface--00);
     width: 100vw;
     padding: var(--space-xl) var(--space-big02);
@@ -1004,6 +1023,7 @@ width: 60%;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+    max-width: 1280px;
     gap:  var(--space-xl)  var(--space-xl);
     
 }
@@ -1017,8 +1037,14 @@ width: 60%;
     background-color: var(--surface--01);
     border-radius: 8px;
     padding: var(--space-xs);
-    
-    
+}
+
+@media (max-width: 3000px) and (min-width: 1441px){
+
+    .techCard{
+        width: auto;
+        gap: auto;
+    }
 }
 
 .techInfo{
@@ -1044,24 +1070,35 @@ width: 60%;
 
 /* ------------- cases ------------- */
 
+.caseContainerWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--surface--00);
+    width: 100%;
+    padding: var(--space-big02);
+    gap: var(--space-big02);
+
+}
 
 .caseContainer{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: var(--space-big02);
     background-color: var(--surface--00);
-    padding: var(--space-xl) var(--space-big09) var(--space-none);
-    gap: var(--space-big02);
-    
-
+    width: 100%;
+    max-width: 1440px;
+    gap: 80px;
 }
+
 
 .caseShort{
     display: flex;
     flex-direction: column;
+    flex: 1;
     gap: var(--space-s);
-    
+    width:fit-content;
 }
 
 .caseTitle{
@@ -1072,12 +1109,26 @@ width: 60%;
     
 }
 
+.caseImage{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.caseImageLong{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 2/1;
+}
+
+
 .imageSmall{
-    width: 336px;
-    height: 336px;
+    width: 100%;
+    height: 100%;
     border-radius: 4px;
     object-fit: cover;
-    
+    aspect-ratio: 1/1;
 }
 
 .caseNumber{
@@ -1090,30 +1141,45 @@ width: 60%;
     
 }
 
+.caseContainerLong{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1440px;
+    column-gap: var(--space-big02);
+}
+
 .caseLong{
     display: flex;
     flex-direction: column;
+    flex: 2.2;
     gap: var(--space-s);
-    
+    aspect-ratio: 2/1;
 }
 
 .imageLarge{
-    width: 753px;
-    height: 336px;
+    width: 100%;
+    height: 100%;
     border-radius: 4px;
     object-fit: cover;
-    
+    aspect-ratio: 2/1;
 }
 
 
 /* ------------- footer ------------- */
 
 footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     background-color: var(--surface--00);
-    padding: var(--space-xl) var(--space-big02) var(--space-none);
     
 }
 
+.footerElements{
+    width: 100%;
+    max-width: 1440px;
+}
 
 .footerIntro{
     font-family: var(--font-primary);
@@ -1129,6 +1195,7 @@ footer{
 .container01{
     display: flex;
     flex-direction: row;
+    width: 100%;
     padding: var(--space-big08) var(--space-none) var(--space-big02);
     
 }
@@ -1340,8 +1407,5 @@ footer{
 }
 
 /* ------------------------ Media queries ------------------------ */
-
-
-
 
 
