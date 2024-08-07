@@ -269,8 +269,44 @@ nav{
     
 }
 
+.marqueeHeader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15vw;
+    overflow: hidden;
+}
+
+.marqueeWrapper2{
+    display: inline-block;
+    animation: marquee2 20s linear infinite;
+    white-space: nowrap;
+    position: relative;
+}
+
+@keyframes marquee2 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+.linkComponent2{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    align-items: center;
+    margin-right: var(--space-big08);
+}
+
 .logoWrapper{
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     
 }
 
@@ -573,8 +609,6 @@ button:hover{
     animation: marquee1 20s linear infinite;
     white-space: nowrap;
     position: relative;
-    
-
 }
 
 .itemMarquee{
