@@ -1,0 +1,99 @@
+
+/*
+.caseContainerWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--surface--00);
+    width: 100%;
+    padding:var(--space-big02);
+    gap: var(--space-big02);
+
+}
+
+.caseContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: var(--space-big02);
+    background-color: var(--surface--00);
+    width: 100%;
+    max-width: 1440px;
+    padding: var(--space-none) var(--space-big02);
+    gap: var(--space-big02);
+    
+}
+
+.caseContainerLong{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1440px;
+    gap: var(--space-big09);
+}
+
+
+.caseShort{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: var(--space-s);
+    width:fit-content;
+}
+
+.caseTitle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-xs);
+    
+}
+
+.caseImage{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.caseImageLong{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 2/1;
+}
+
+
+.imageSmall{
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}
+
+.caseNumber{
+    font-family: var(--font-secondary);
+    color: var(--font--principal);
+    font-size: var(--text-xs);
+    line-height: var(--line-height-s);
+    text-transform: uppercase;
+    font-feature-settings: "zero" 1;
+    
+}
+
+
+
+.caseLong{
+    display: flex;
+    flex-direction: column;
+    flex: 2.4;
+    gap: var(--space-s);
+    aspect-ratio: 2/1;
+}
+
+.imageLarge{
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    object-fit: cover;
+    aspect-ratio: 2/1;
+}

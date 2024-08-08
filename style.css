@@ -170,7 +170,7 @@ body{
 
 h1{
     font-family: var(--font-primary);
-    font-size: clamp(var(--text-l), 2vw, var(--text-4xl));
+    font-size: clamp(var(--text-l), 2.5vw, var(--text-4xl));
     color: var(--font--principal);
     font-weight: var(--regular);
     text-transform: uppercase;
@@ -222,7 +222,7 @@ h5{
 
 h6{
     font-family: var(--font-secondary);
-    font-size: var(--text-s);
+    font-size: var(--text-xs);
     font-weight: var(--medium);
     line-height: var(--line-height-s);
     color: var(--font--principal);
@@ -1100,62 +1100,65 @@ width: 60%;
 }
 
 
-
-
 /* ------------- cases ------------- */
-
-.caseContainerWrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--surface--00);
-    width: 100%;
-    padding: var(--space-big02);
-    gap: var(--space-big02);
-
-}
 
 .caseContainer{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: var(--space-big02);
-    background-color: var(--surface--00);
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    max-width: 1440px;
-    gap: 80px;
+    padding: var(--space-big02);
 }
 
+.caseWrapper{
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-big02);
+    padding: var(--space-xl);
+}
 
-.caseShort{
+.caseBox{
     display: flex;
     flex-direction: column;
-    flex: 1;
-    gap: var(--space-s);
-    width:fit-content;
+    gap: var(--space-xs);
 }
 
 .caseTitle{
     display: flex;
     flex-direction: row;
-    align-items: center;
     gap: var(--space-xs);
-    
 }
 
-.caseImage{
+.imageBoxSmall{
     display: flex;
-    width: 100%;
-    height: 100%;
+    width: 336px;
+    height: 336px;
 }
 
-.caseImageLong{
+.titleWrapper{
     display: flex;
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 2/1;
+    flex-direction: column;
+    height: 20px;
+    overflow: hidden;
 }
 
+.animacionTitulo{
+    transform: translateY(0px);
+    transition: transform .5s ease, opacity .2s ease;
+}
+
+.animacionCaso{
+    transform: translateY(0px);
+    transition: transform .5s ease, opacity .2s ease;
+}
+
+.caseBox:hover .animacionTitulo{
+    transform: translateY(-32px);
+}
+
+.caseBox:hover .animacionCaso{
+    transform: translateY(-22px);
+}
 
 .imageSmall{
     width: 100%;
@@ -1165,39 +1168,35 @@ width: 60%;
     aspect-ratio: 1/1;
 }
 
+.imageBoxBig{
+    display: flex;
+    width: 753px;
+    height: 336px;
+}
+
+
 .caseNumber{
     font-family: var(--font-secondary);
     color: var(--font--principal);
-    font-size: var(--text-s);
+    font-size: var(--text-xs);
     line-height: var(--line-height-s);
     text-transform: uppercase;
     font-feature-settings: "zero" 1;
     
 }
 
-.caseContainerLong{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    max-width: 1440px;
-    column-gap: var(--space-big02);
-}
 
-.caseLong{
-    display: flex;
-    flex-direction: column;
-    flex: 2.2;
-    gap: var(--space-s);
-    aspect-ratio: 2/1;
-}
 
-.imageLarge{
-    width: 100%;
-    height: 100%;
-    border-radius: 4px;
-    object-fit: cover;
-    aspect-ratio: 2/1;
-}
+
+
+
+
+
+
+
+
+
+
 
 
 /* ------------- footer ------------- */
@@ -1207,12 +1206,12 @@ footer{
     flex-direction: row;
     justify-content: center;
     background-color: var(--surface--00);
-    
 }
 
 .footerElements{
     width: 100%;
     max-width: 1440px;
+    padding: var(--space-big02) var(--space-big02) var(--space-none);
 }
 
 .footerIntro{
@@ -1230,7 +1229,7 @@ footer{
     display: flex;
     flex-direction: row;
     width: 100%;
-    padding: var(--space-big08) var(--space-none) var(--space-big02);
+    padding: var(--space-big08) var(--space-none) var(--space-big08);
     
 }
 
@@ -1343,6 +1342,16 @@ footer{
     gap: var(--space-xl);
     flex-wrap: wrap;
     border-bottom: 1px solid var(--stroke--01);
+    padding: var(--space-big08) var(--space-none);
+    
+}
+
+.infoWrapperSpecial {
+    display: flex;
+    flex-direction: row; 
+    width: 100%;
+    gap: var(--space-xl);
+    flex-wrap: wrap;
     padding: var(--space-big08) var(--space-none);
     
 }
