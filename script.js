@@ -129,7 +129,7 @@ const handleOnTouch = e => {
   updateLastMousePosition(touchPosition);
 }
 
-// Registrar la posición del ratón al entrar en la ventana
+// Registrar la posición del ratón o toque al entrar en la ventana
 const handleMouseEnter = e => {
   const mousePosition = { 
     x: e.clientX, 
@@ -140,10 +140,23 @@ const handleMouseEnter = e => {
   updateLastMousePosition(mousePosition);
 }
 
+const handleTouchStart = e => {
+  const touch = e.touches[0];
+  
+  const touchPosition = {
+    x: touch.clientX,
+    y: touch.clientY
+  };
+  
+  // Establecer la última posición del toque cuando entra en la ventana
+  updateLastMousePosition(touchPosition);
+}
+
 // Configurar eventos al cargar la página
 window.addEventListener('load', () => {
   window.onmousemove = e => handleOnMove(e);
   window.ontouchmove = e => handleOnTouch(e);
   document.body.onmouseenter = e => handleMouseEnter(e);
+  document.body.ontouchstart = e => handleTouchStart(e);
   document.body.onmouseleave = () => updateLastMousePosition(originPosition);
 });
