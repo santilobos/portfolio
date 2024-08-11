@@ -30,7 +30,6 @@ function changeTheme() {
 
 
 // Efecto mouse
-
 let start = new Date().getTime();
 
 const originPosition = { x: 0, y: 0 };
@@ -152,11 +151,20 @@ const handleTouchStart = e => {
   updateLastMousePosition(touchPosition);
 }
 
+// Función para detectar si es un dispositivo móvil
+const isMobile = () => /Mobi|Android/i.test(navigator.userAgent);
+
 // Configurar eventos al cargar la página
 window.addEventListener('load', () => {
-  window.onmousemove = e => handleOnMove(e);
-  window.ontouchmove = e => handleOnTouch(e);
-  document.body.onmouseenter = e => handleMouseEnter(e);
-  document.body.ontouchstart = e => handleTouchStart(e);
-  document.body.onmouseleave = () => updateLastMousePosition(originPosition);
+  if (!isMobile()) {
+    window.onmousemove = e => handleOnMove(e);
+    document.body.onmouseenter = e => handleMouseEnter(e);
+    document.body.onmouseleave = () => updateLastMousePosition(originPosition);
+  }
+  
+  // Solo agregar eventos táctiles si no es móvil
+  if (!isMobile()) {
+    window.ontouchmove = e => handleOnTouch(e);
+    document.body.ontouchstart = e => handleTouchStart(e);
+  }
 });
