@@ -168,3 +168,46 @@ window.addEventListener('load', () => {
     document.body.ontouchstart = e => handleTouchStart(e);
   }
 });
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const cardContainer = document.querySelector('.cardContainer');
+  const progressBar = document.querySelector('.progressBar');
+
+  const startPercentage = 5; // Porcentaje de inicio de la barra de progreso
+
+  cardContainer.addEventListener('scroll', function() {
+      const maxScrollLeft = cardContainer.scrollWidth - cardContainer.clientWidth;
+      const scrollLeft = cardContainer.scrollLeft;
+
+      // Calcular el porcentaje actual de desplazamiento
+      const scrollPercentage = (scrollLeft / maxScrollLeft) * 100;
+
+      // Ajustar la posición de la barra de progreso
+      if (scrollLeft <= 0) {
+          // Si estamos al inicio, establece la barra al porcentaje inicial deseado
+          progressBar.style.width = startPercentage + '%';
+      } else {
+          // Ajustar la barra de progreso en función del desplazamiento
+          progressBar.style.width = Math.min(scrollPercentage, 100) + '%';
+      }
+  });
+
+  // Inicializar la posición de la barra de progreso al cargar
+  function initializeProgressBar() {
+      const maxScrollLeft = cardContainer.scrollWidth - cardContainer.clientWidth;
+      const scrollLeft = cardContainer.scrollLeft;
+
+      // Establecer la barra de progreso al porcentaje de inicio
+      if (scrollLeft <= 0) {
+          progressBar.style.width = startPercentage + '%';
+      } else {
+          const scrollPercentage = (scrollLeft / maxScrollLeft) * 100;
+          progressBar.style.width = Math.min(scrollPercentage, 100) + '%';
+      }
+  }
+
+  initializeProgressBar();
+});
