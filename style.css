@@ -2029,10 +2029,6 @@ width: 60%;
     aspect-ratio: 1/1;
 }
 
-
-
-
-
 .caseNumber{
     font-family: var(--font-secondary);
     color: var(--font--principal);
@@ -2043,50 +2039,61 @@ width: 60%;
     
 }
 
-@media (max-width: 1024px) and (min-width: 921px){
 
-    .caseWrapper{
-        gap: var(--space-m);
-        padding: var(--space-m) var(--space-none);
-    }
-}
+@media (max-width: 1440px) and (min-width: 1281px){}
 
-@media (max-width: 920px) and (min-width: 768px){
+@media (max-width: 1280px) and (min-width: 1025px){
     .caseContainer{
-        padding: var(--space-big02) var(--space-m);
-        gap: var(--space-xl);
+        padding: var(--space-s);
     }
     
     .caseWrapper{
         display: flex;
         flex-direction: row;
-        gap: var(--space-xl);
-        padding: var(--space-xl) var(--space-m);
+        gap: var(--space-s);
+        padding: var(--space-big02) var(--space-xs) var(--space-none);
     }
-    
-    .imageBoxSmall{
-        display: flex;
-        width: 220px;
-        height: 220px;
-    }
-
-    .caseWrapper{
-        gap: var(--space-m);
-        padding: var(--space-none);
-    }
-
-    .imageBoxBig{
-        display: flex;
-        width: 478px;
-        height: 220px;
-    }
-
-
 }
 
+@media (max-width: 1024px) and (min-width: 768px){
+    .caseContainer{
+        padding: var(--space-s);
+    }
+    
+    .caseWrapper{
+        display: flex;
+        flex-direction: row;
+        gap: var(--space-s);
+        padding: var(--space-big02) var(--space-xs) var(--space-none);
+    }
+}
 
+@media (max-width: 767px) and (min-width: 480px){
 
+    .caseContainer{
+        padding: var(--space-s);
+    }
+    
+    .caseWrapper{
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-big02);
+        padding: var(--space-big02) var(--space-xs) var(--space-none);
+    }
+}
 
+@media (max-width: 479px) and (min-width: 320px){
+    .caseContainer{
+        padding: var(--space-s);
+    }
+    
+    .caseWrapper{
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-big02);
+        padding: var(--space-big02) var(--space-xs) var(--space-none);
+    }
+}
 
 
 

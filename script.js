@@ -211,3 +211,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   initializeProgressBar();
 });
+
+
+// header que se esconde 
