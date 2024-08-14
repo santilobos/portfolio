@@ -1,35 +1,4 @@
 
-
-
-let icon = document.getElementById("themeIcon");
-
-// Función para aplicar el tema guardado en localStorage
-function applySavedTheme() {
-    const savedTheme = localStorage.getItem('theme') || 'darkTheme';
-    document.body.classList.add(savedTheme);
-    if (savedTheme === 'lightTheme') {
-        icon.textContent = "dark_mode";
-    } else {
-        icon.textContent = "light_mode";
-    }
-}
-
-// Llama a la función para aplicar el tema guardado cuando se carga la página
-document.addEventListener('DOMContentLoaded', applySavedTheme);
-
-function changeTheme() {
-    document.body.classList.toggle("lightTheme");
-    if (document.body.classList.contains("lightTheme")) {
-        icon.textContent = "dark_mode";
-        localStorage.setItem('theme', 'lightTheme');
-    } else {
-        icon.textContent = "light_mode";
-        localStorage.setItem('theme', 'darkTheme');
-    }
-}
-
-
-// Efecto mouse
 let start = new Date().getTime();
 
 const originPosition = { x: 0, y: 0 };
@@ -63,11 +32,10 @@ const createGlowPoint = position => {
   
   glow.className = "glow-point";
   
-  // Posicionar de manera fija para que funcione en todo el documento
   glow.style.position = "fixed";
   glow.style.left = px(position.x);
   glow.style.top = px(position.y);
-  glow.style.zIndex = 9999;  // Asegura que esté sobre otros elementos
+  glow.style.zIndex = 9999;
 
   appendElement(glow);
   
@@ -86,7 +54,6 @@ const createGlow = (last, current) => {
   const dx = (current.x - last.x) / quantity,
         dy = (current.y - last.y) / quantity;
   
-  // Crear puntos intermedios para el alargamiento
   Array.from(Array(quantity)).forEach((_, index) => { 
     const x = last.x + dx * index, 
           y = last.y + dy * index;
@@ -94,11 +61,12 @@ const createGlow = (last, current) => {
     createGlowPoint({ x, y });
   });
 
-  // Asegura que siempre haya un glow point en la posición actual del cursor o del toque
   createGlowPoint(current);
 }
 
-const updateLastMousePosition = position => last.mousePosition = position;
+const updateLastMousePosition = position => {
+  last.mousePosition = position;
+}
 
 const handleOnMove = e => {
   const mousePosition = { 
@@ -106,10 +74,15 @@ const handleOnMove = e => {
     y: e.clientY 
   };
   
-  // Crear una secuencia de puntos brillantes entre la última posición y la actual
-  createGlow(last.mousePosition, mousePosition);
+  const header = document.querySelector('header');
+  if (header && header.contains(e.target)) {
+    return;
+  }
   
-  // Actualiza la posición del ratón
+  if (last.mousePosition.x !== 0 || last.mousePosition.y !== 0) {
+    createGlow(last.mousePosition, mousePosition);
+  }
+  
   updateLastMousePosition(mousePosition);
 }
 
@@ -121,21 +94,29 @@ const handleOnTouch = e => {
     y: touch.clientY
   };
   
-  // Crear una secuencia de puntos brillantes entre la última posición tocada y la actual
-  createGlow(last.mousePosition, touchPosition);
+  const header = document.querySelector('header');
+  if (header && header.contains(e.target)) {
+    return;
+  }
   
-  // Actualiza la posición del toque
+  if (last.mousePosition.x !== 0 || last.mousePosition.y !== 0) {
+    createGlow(last.mousePosition, touchPosition);
+  }
+  
   updateLastMousePosition(touchPosition);
 }
 
-// Registrar la posición del ratón o toque al entrar en la ventana
 const handleMouseEnter = e => {
   const mousePosition = { 
     x: e.clientX, 
     y: e.clientY 
   };
   
-  // Establecer la última posición del ratón cuando entra en la ventana
+  const header = document.querySelector('header');
+  if (header && header.contains(e.target)) {
+    return;
+  }
+
   updateLastMousePosition(mousePosition);
 }
 
@@ -146,15 +127,17 @@ const handleTouchStart = e => {
     x: touch.clientX,
     y: touch.clientY
   };
+
+  const header = document.querySelector('header');
+  if (header && header.contains(e.target)) {
+    return;
+  }
   
-  // Establecer la última posición del toque cuando entra en la ventana
   updateLastMousePosition(touchPosition);
 }
 
-// Función para detectar si es un dispositivo móvil
 const isMobile = () => /Mobi|Android/i.test(navigator.userAgent);
 
-// Configurar eventos al cargar la página
 window.addEventListener('load', () => {
   if (!isMobile()) {
     window.onmousemove = e => handleOnMove(e);
@@ -162,7 +145,6 @@ window.addEventListener('load', () => {
     document.body.onmouseleave = () => updateLastMousePosition(originPosition);
   }
   
-  // Solo agregar eventos táctiles si no es móvil
   if (!isMobile()) {
     window.ontouchmove = e => handleOnTouch(e);
     document.body.ontouchstart = e => handleTouchStart(e);
@@ -171,6 +153,8 @@ window.addEventListener('load', () => {
 
 
 
+
+// Barra de progreso en slider cards
 
 document.addEventListener('DOMContentLoaded', function() {
   const cardContainer = document.querySelector('.cardContainer');
