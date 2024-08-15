@@ -4,16 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FC BARCELONA - APP SOCIS</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ocultar todo el contenido hasta que el tema se aplique */
+        body.hidden-content {
+            display: none;
+        }
+    </style>
+    <script>
+        // Determinar el tema actual y aplicarlo antes de mostrar el contenido
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+
+            // Asegurarse de que el tema se aplique antes de mostrar el contenido
+            document.body.classList.remove('hidden-content');
+
+            // Actualizar el icono del tema si es necesario
+            const icon = document.getElementById('themeIcon');
+            if (icon) {
+                icon.textContent = savedTheme === 'light' ? "dark_mode" : "light_mode";
+            }
+        });
+    </script>
+    <script src="script.js"></script>
 </head>
 <body>
     <main>
 
+       
+            <button class="closeButton" id="closeOverlay">
+                <span class="material-symbols-outlined close">close</span>
+                <p class="closeTag">close</p>
+            </button>
+
+            <script>
+                // Manejar el clic en el botón de cierre para comunicar al padre
+                document.getElementById('closeOverlay').addEventListener('click', function() {
+                    // Comunicar al padre para cerrar el overlay
+                    window.parent.postMessage('closeOverlay', '*');
+                });
+            </script>
+                
+       
         <!-------------------------- intro case -------------------------->
         <section class="introCase">
-            <div class="close">
-                <h6>close</h6>
-            </div>
+            
             <div class="caseIntroLeft">
                 
             </div>

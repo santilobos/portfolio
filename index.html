@@ -1038,7 +1038,7 @@
     <!----------------- bloque 1 ----------------->
     <div class="caseWrapper">
         <!--01-->
-        <div class="caseBox">
+        <div class="caseBox" id="openOverlay">
             <div class="caseTitle">
                 <p class="caseNumber">01/</p>
                 <div class="titleWrapper">
@@ -1050,6 +1050,49 @@
                 <img class="imageSmall" src="./assets/iOS app dock.png" alt="imagen de caso 01">
             </div>
         </div>
+
+        <div id="overlay">
+            <div class="overlay-content">
+                <iframe id="iframePage" src="./fc-barcelona.html"></iframe>
+            </div>
+        </div>
+
+        
+        <script>
+            function injectCSSIntoIframe(iframe) {
+                const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+                const styles = Array.from(document.querySelectorAll('link[rel="stylesheet"], style')).map(el => el.outerHTML);
+                styles.forEach(style => {
+                    iframeDocument.head.insertAdjacentHTML('beforeend', style);
+                });
+            }
+    
+            document.getElementById('openOverlay').addEventListener('click', function() {
+                const iframe = document.getElementById('iframePage');
+                iframe.src = './fc-barcelona.html'; // Carga la página en el iframe
+    
+                // Mostrar el overlay y bloquear el scroll
+                document.getElementById('overlay').classList.add('show');
+                document.body.style.overflow = 'hidden';
+    
+                // Esperar a que el iframe esté completamente cargado antes de inyectar los estilos
+                iframe.onload = function() {
+                    injectCSSIntoIframe(iframe);
+                };
+            });
+    
+            window.addEventListener('message', function(event) {
+                if (event.data === 'closeOverlay') {
+                    document.getElementById('overlay').classList.remove('show'); // Ocultar el overlay
+                    document.body.style.overflow = ''; // Habilitar el scroll nuevamente
+                }
+            });
+    
+            document.getElementById('closeOverlay').addEventListener('click', function() {
+                window.postMessage('closeOverlay', '*');
+            });
+        </script>
+        
 
         <!--02-->
         <div class="caseBox">
