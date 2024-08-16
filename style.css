@@ -3073,7 +3073,9 @@ main{
     left: var(--space-s);
     gap: var(--space-xxs);
     transition: gap 0.5 ease;
+    
 }
+
 
 .closeButton .material-symbols-outlined.close{
    
