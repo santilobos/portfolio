@@ -37,6 +37,7 @@
                 <p class="closeTag">close</p>
             </button>
 
+            
             <script>
                 // Manejar el clic en el botón de cierre para comunicar al padre
                 document.getElementById('closeOverlay').addEventListener('click', function() {
@@ -44,7 +45,10 @@
                     window.parent.postMessage('closeOverlay', '*');
                 });
             </script>
-                
+        
+
+       
+        
        
         <!-------------------------- intro case -------------------------->
         <section class="introCase">

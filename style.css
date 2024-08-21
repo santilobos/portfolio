@@ -3206,30 +3206,21 @@ main{
     padding: var(--space-s) var(--space-none);
 }
 
-#overlay{
+#overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
-    align-items: flex-end; /* Comienza desde abajo */
+    align-items: flex-end;
     z-index: 1000;
-    opacity: 0;
     pointer-events: none;
-    transition: opacity 0.5s ease;
+    overflow: hidden;
 }
 
-iframe{
-    width: 100%;
-    height: 100%;
-    border: none;
-   
-}
-
-.overlay-content{
+.overlay-content {
     position: relative;
     width: 100%;
     height: 100%;
@@ -3239,14 +3230,24 @@ iframe{
 }
 
 #overlay.show {
-    opacity: 1;
-    pointer-events: auto;
+    pointer-events: auto; /* Habilitar la interacción */
 }
 
-/* Animar el contenido del overlay hacia su posición */
 #overlay.show .overlay-content {
-    transform: translateY(0);
+    transform: translateY(0); /* Animar el contenido hacia su posición visible */
 }
+
+#overlay.hide .overlay-content {
+    transform: translateY(100%); /* Mover hacia abajo fuera de la pantalla */
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
 
 .closeButton{
     display: flex;
