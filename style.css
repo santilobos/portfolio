@@ -3001,6 +3001,7 @@ footer{
 
 /* --------- intro --------- */
 
+
 main{
     display: flex;
     flex-direction: column;
@@ -3040,10 +3041,20 @@ main{
     transition: width 0.5s ease;
 }
 
+.titleIntroCase{
+    line-height: var(--line-height-m);
+}
+
+.introDetail{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+}
+
 .detail{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 50%;
     gap: var(--space-m);
     transition: width 0.5s ease, gap 0.5 ease;
 }
@@ -3086,6 +3097,15 @@ main{
 
 /* --------- image container --------- */
 
+.imageContainerFull{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: var(--surface--00) ;
+    transition: width 0.5s ease, padding 0.5 ease;
+}
+
 .imageContainer{
     display: flex;
     flex-direction: column;
@@ -3105,6 +3125,13 @@ main{
     background-color: var(--surface--00);
     transition: width 0.5s ease, padding 0.5 ease;
 }
+
+.caseImagesFull{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 .caseImages{
     width: 100%;
@@ -3136,12 +3163,18 @@ main{
 }
 
 .explanationLeft{
+    display: flex;
+    flex-direction: column;
     width: 100%;
     transition: width 0.5s ease;
+    gap: var(--space-m);
 }
 .explanationRight{
+    display: flex;
+    flex-direction: column;
     width: 100%;
     transition: width 0.5s ease;
+    gap: var(--space-m);
 }
 
 /* --------- resultados --------- */

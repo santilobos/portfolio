@@ -27,6 +27,7 @@
         });
     </script>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="iframe-content">
     <main>
@@ -45,9 +46,7 @@
                     window.parent.postMessage('closeOverlay', '*');
                 });
             </script>
-        
-
-       
+    
         
        
         <!-------------------------- intro case -------------------------->
@@ -59,11 +58,11 @@
 
             <div class="caseIntroRight">
                 <div class="client">
-                    <h5>FC BARCELONA</h5>
+                    <h2 class="titleIntroCase">FC BARCELONA</h2>
                 </div>
                 <div class="detail">
-                    <div>
-                        <h5>Nueva app de socios del club</h5>
+                    <div class="introDetail">
+                        <h2 class="titleIntroCase">A new user experience for club members</h2>
                         <p>2023</p>
                     </div>
                     <div class="commentWrapper">
@@ -82,8 +81,8 @@
 
         <!-------------------------- contenedor imagen -------------------------->
 
-        <section class="primeraImagen">
-            <img class="caseImages" src="./case-img/imagenPortadaCase.png" alt="">
+        <section class="imageContainerFull">
+            <img class="caseImagesFull" src="./case01/case01-cover.png" alt="Imagen de pantallas de la app de socios del FC Barcelona">
         </section>
 
         <!-------------------------- contenedor explicacion -------------------------->
@@ -91,6 +90,7 @@
         <section class="explanationWrapper">
             <div class="explanationsContainer">
                 <div class="explanationLeft">
+                    <h4>Introduccion</h4>
                     <p>Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.</p>
                 </div>
                 <div class="explanationRight">
@@ -98,14 +98,10 @@
             </div>
         </section>
 
-        <!-------------------------- contenedor imagen -------------------------->
+        <!-------------------------- contenedor imagen full -------------------------->
 
         <section class="imageContainer">
-            <img class="caseImages" src="./case-img/imagenPortadaCase.png" alt="">
-        </section>
-
-        <section class="imageContainer">
-            <img class="caseImages" src="./case-img/imagenPortadaCase.png" alt="">
+            <img class="caseImages" src="./case01/case02.png" alt="">
         </section>
 
         <!-------------------------- contenedor explicacion -------------------------->
@@ -115,6 +111,7 @@
                 <div class="explanationLeft"></p>
                 </div>
                 <div class="explanationRight">
+                    <h4>Onboarding</h4>
                     <p>Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.</p>
                 </div>
             </div>
@@ -123,7 +120,11 @@
         <!-------------------------- contenedor imagen -------------------------->
 
         <section class="imageContainer">
-            <img class="caseImages" src="./case-img/imagenPortadaCase.png" alt="">
+            <video width="1920" height="1080" autoplay loop muted>
+                <source src="./case01/video onboarding.mp4" type="video/mp4">
+                <source src="./case01/video onboarding.mp4" type="video/ogg">
+                Your browser does not support the video tag.
+              </video>
         </section>
 
         <section class="imageContainer">
