@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC Barcelona - Socis app</title>
+    <style>
+        /* Ocultar todo el contenido hasta que el tema se aplique */
+        body.hidden-content {
+            display: none;
+        }
+    </style>
+    <script>
+        // Determinar el tema actual y aplicarlo antes de mostrar el contenido
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+
+            // Asegurarse de que el tema se aplique antes de mostrar el contenido
+            document.body.classList.remove('hidden-content');
+
+            // Actualizar el icono del tema si es necesario
+            const icon = document.getElementById('themeIcon');
+            if (icon) {
+                icon.textContent = savedTheme === 'light' ? "dark_mode" : "light_mode";
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="iframe-content">
+    <main>
+
+       
+            <button class="closeButton" id="closeOverlay">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="12px" fill="var(--item--01)"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+                <p class="closeTag">close</p>
+            </button>
+
+            
+            <script>
+                // Manejar el clic en el botón de cierre para comunicar al padre
+                document.getElementById('closeOverlay').addEventListener('click', function() {
+                    // Comunicar al padre para cerrar el overlay
+                    window.parent.postMessage('closeOverlay', '*');
+                });
+            </script>
+    
+        
+       
+        <!-------------------------- intro case -------------------------->
+        <section class="introCase">
+            
+            <div class="caseIntroLeft">
+                
+            </div>
+
+            <div class="caseIntroRight">
+                <div class="client">
+                    <h2 class="titleIntroCase">FC BARCELONA</h2>
+                </div>
+                <div class="detail">
+                    <div class="introDetail">
+                        <h2 class="titleIntroCase">A new user experience for club members</h2>
+                        <p>2023</p>
+                    </div>
+                    <div class="commentWrapper">
+                        <p>Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.</p>
+                    </div>
+                    <div class="tagWrapper">
+                        <p class="tag">Design Research</p>
+                        <p class="tag">UX/UI Design</p>
+                        <p class="tag">Motion design</p>
+                        <p class="tag">Visual design</p>
+                        <p class="tag">Design system</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-------------------------- contenedor imagen -------------------------->
+
+        <section class="imageContainerFull">
+            <img class="caseImagesFull" src="../case01/fcbarcelona-case01.jpg" alt="Imagen de pantallas de la app de socios del FC Barcelona">
+        </section>
+
+        <!-------------------------- Registro -------------------------->
+
+        <section class="explanationWrapper">
+            <div class="explanationsContainer">
+                <div class="explanationLeft">
+                    <h4>Registro a través de la autenticación multifactor</h4>
+                    <p>Gracias a este sistema de registro permitimos a los usuarios probar su identidad suministrando dos factores cuando inician sesión, su teléfono móvil y su email de uso personal.  Este mecanismo que enlaza el acceso de usuarios con múltiples tipos de factores hace más difícil que amenazas comunes como ataques de phishing y transferencias de cuentas se realicen con éxito.</p>
+                    <p></p>
+                </div>
+                <div class="explanationRight">
+                </div>
+            </div>
+        </section>
+
+
+        <section class="imageContainer">
+            <img class="caseImages" src="../case01/fcbarcelona-case02.jpg" alt="Imagen de distintas pantallas de la app de socios del fc barcelona">
+        </section>
+
+        <!-------------------------- Onboarding-------------------------->
+
+        <section class="explanationWrapper">
+            <div class="explanationsContainer">
+                <div class="explanationLeft"></p>
+                </div>
+                <div class="explanationRight">
+                    <h4>Onboarding</h4>
+                    <p>Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="videoContainer">
+            <div class="videoWrapper">
+                <video class="videoCase" autoplay loop muted>
+                    <source src="../case01/fcbarcelona-onboarding.mp4" type="video/mp4">
+                    <source src="./case01/fcbarcelona-onboarding.mp4" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+       
+       <!-------------------------- Home -------------------------->
+
+       <section class="explanationWrapper">
+        <div class="explanationsContainer">
+            <div class="explanationLeft">
+                <h4>Home</h4>
+                <p>Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.</p>
+            </div>
+            <div class="explanationRight">
+            </div>
+        </div>
+    </section>
+
+    <section class="imageContainer">
+        <img class="caseImages" src="../case01/fcbarcelona-case04.jpg" alt="Imagen de distintas pantallas de la app de socios del fc barcelona">
+    </section>
+
+        <!-------------------------- asiento inverso -------------------------->
+
+       <section class="explanationWrapper">
+        <div class="explanationsContainer">
+            <div class="explanationLeft">
+            </div>
+            <div class="explanationRight">
+                <h4>Asiento inverso</h4>
+                <p>Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="imageContainer">
+        <img class="caseImages" src="../case01/fcbarcelona-case05.jpg" alt="Imagen de distintas pantallas de la app de socios del fc barcelona">
+    </section>
+
+    <!-------------------------- gestion asiento multiple -------------------------->
+
+    <section class="explanationWrapper">
+        <div class="explanationsContainer">
+            <div class="explanationLeft">
+                <h4>Gestion asiento multiple</h4>
+                <p>Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.</p>
+            </div>
+            <div class="explanationRight">
+            </div>
+        </div>
+    </section>
+
+    <section class="imageContainer">
+        <img class="caseImages" src="../case01/fcbarcelona-case06.jpg" alt="Imagen de distintas pantallas de la app de socios del fc barcelona">
+    </section>
+
+    <!-------------------------- Bonificacion -------------------------->
+
+    <section class="explanationWrapper">
+        <div class="explanationsContainer">
+            <div class="explanationLeft">
+            </div>
+            <div class="explanationRight">
+                <h4>Bonificación</h4>
+                <p>Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="imageContainer">
+        <img class="caseImages" src="../case01/fcbarcelona-case07.jpg" alt="Imagen de distintas pantallas de la app de socios del fc barcelona">
+    </section>
+
+     <!-------------------------- detalles de gestion -------------------------->
+
+     <section class="explanationWrapper">
+        <div class="explanationsContainer">
+            <div class="explanationLeft">
+                <h4>Detalle de la gestion</h4>
+                <p>Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.</p>
+            </div>
+            <div class="explanationRight">
+            </div>
+        </div>
+    </section>
+
+    <section class="imageContainer">
+        <img class="caseImages" src="../case01/fcbarcelona-case08.jpg" alt="Imagen de distintas pantallas de la app de socios del fc barcelona">
+    </section>
+
+    <!-------------------------- Wallet -------------------------->
+
+    <section class="explanationWrapper">
+        <div class="explanationsContainer">
+            <div class="explanationLeft">
+            </div>
+            <div class="explanationRight">
+                <h4>Wallet</h4>
+                <p>Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="imageContainer">
+        <img class="caseImages" src="../case01/fcbarcelona-case09.jpg" alt="Imagen de distintas pantallas de la app de socios del fc barcelona">
+    </section>
+
+     <!-------------------------- entrada dinamica -------------------------->
+
+     <section class="explanationWrapper">
+        <div class="explanationsContainer">
+            <div class="explanationLeft">
+                <h4>Entrada dinamica</h4>
+                <p>Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.</p>
+            </div>
+            <div class="explanationRight">
+            </div>
+        </div>
+    </section>
+
+    <section class="videoContainer">
+        <div class="videoWrapper">
+            <video class="videoCase" autoplay loop muted>
+                <source src="../case01/entradadinamica.mp4" type="video/mp4">
+                <source src="../case01/entradadinamica.mp4" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+   
+
+    <!-------------------------- multiperfil -------------------------->
+
+    <section class="explanationWrapper">
+        <div class="explanationsContainer">
+            <div class="explanationLeft">
+            </div>
+            <div class="explanationRight">
+                <h4>Gesiton multiperfil</h4>
+                <p>Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="imageContainer">
+        <img class="caseImages" src="../case01/fcbarcelona-case11.jpg" alt="Imagen de distintas pantallas de la app de socios del fc barcelona">
+    </section>
+
+    <!-------------------------- resumen -------------------------->
+
+    <section class="explanationWrapper">
+        <div class="explanationsContainer">
+            <div class="explanationLeft">
+                <h4>Look and feel</h4>
+                <p>Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.</p>
+            </div>
+            <div class="explanationRight">
+            </div>
+        </div>
+    </section>
+
+    <section class="videoContainer">
+        <div class="videoWrapper">
+            <video class="videoCase" autoplay loop muted>
+                <source src="../case01/resumen.mp4" type="video/mp4">
+                <source src="../case01/resumen.mp4" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+   
+
+
+        <!-------------------------- Resultados -------------------------->
+
+        <section class="resultados">
+            <div class="resultadosContainer">
+                <div class="resultadosLeft">
+                    <h6>Resultados</h6>
+                </div>
+                <div class="resultadosRight">
+                    <div class="resultadoWrapper">
+                        <p class="numberResultado">3x</p>
+                        <p>Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.</p>
+                    </div>
+    
+                    <div class="resultadoWrapper">
+                        <p class="numberResultado">3x</p>
+                        <p>Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.</p>
+                    </div>
+    
+                    <div class="resultadoWrapper">
+                        <p class="numberResultado">3x</p>
+                        <p>Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.</p>
+                    </div>
+                </div>    
+            </div>     
+        </section>
+
+        <div class="marqueeCase">
+            <ol class="marqueeWrapper2">
+                <li class="itemMarquee">FC BARCELONA  </li>
+                <li class="itemMarquee">// NUEVA APP DE SOCIS</li>
+                <li class="itemMarquee">FC BARCELONA  </li>
+                <li class="itemMarquee">// NUEVA APP DE SOCIS</li>
+                <li class="itemMarquee">FC BARCELONA  </li>
+                <li class="itemMarquee">// NUEVA APP DE SOCIS</li>
+                <li class="itemMarquee">FC BARCELONA  </li>
+                <li class="itemMarquee">// NUEVA APP DE SOCIS</li>
+                <li class="itemMarquee">FC BARCELONA  </li>
+                <li class="itemMarquee">// NUEVA APP DE SOCIS</li>
+                <li class="itemMarquee">FC BARCELONA  </li>
+                <li class="itemMarquee">// NUEVA APP DE SOCIS</li>
+                <li class="itemMarquee">FC BARCELONA  </li>
+                <li class="itemMarquee">// NUEVA APP DE SOCIS</li>
+                <li class="itemMarquee">FC BARCELONA  </li>
+                <li class="itemMarquee">// NUEVA APP DE SOCIS</li>
+                <li class="itemMarquee">FC BARCELONA  </li>
+                <li class="itemMarquee">// NUEVA APP DE SOCIS</li>
+                <li class="itemMarquee">FC BARCELONA  </li>
+                <li class="itemMarquee">// NUEVA APP DE SOCIS</li>
+                <li class="itemMarquee">FC BARCELONA  </li>
+                <li class="itemMarquee">// NUEVA APP DE SOCIS</li>
+                <li class="itemMarquee">FC BARCELONA  </li>
+                <li class="itemMarquee">// NUEVA APP DE SOCIS</li>
+            </ol>
+            <div class="dotEmpty"></div>
+        </div>
+
+    </main>
+</body>
+</html>

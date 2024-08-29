@@ -1604,38 +1604,23 @@ width: 60%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    padding: var(--space-l) var(--space-none);
-    gap: var(--space-s);
+    padding: var(--space-xl) var(--space-none);
+    gap: var(--space-m);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .tag{
     font-size: var(--text-xs);
-    line-height: var(--line-height-xs);
     font-weight: var(--medium);
-    background-color: var(--surface--03);
-    color: var(--font--principal);
-    padding: var(--space-xs) var(--space-s) 4px;
-    border-radius: 400px;
+    color: var(--font--secondary);
     text-transform: uppercase;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-@media (max-width: 6000px) and (min-width: 1441px){
-    .tag{
-        font-size: var(--text-xxs);
-        line-height: var(--line-height-xxs);
-        padding: var(--space-xxs) var(--space-s) 3px;
-    }
-}
 
 @media (max-width: 1440px) and (min-width: 1281px){
 
-    .tag{
-        font-size: var(--text-xxs);
-        line-height: var(--line-height-xxs);
-        padding: var(--space-xxs) var(--space-s) 4px;
-    }
+    
 
     .styleNumber{
         font-size: var(--text-xxs);
@@ -1664,11 +1649,7 @@ width: 60%;
         line-height: var(--line-height-s);
     }
 
-    .tag{
-        font-size: var(--text-xxs);
-        line-height: var(--line-height-xxs);
-        padding: var(--space-xxs) var(--space-s) 2px;
-    }
+    
 }
 
 @media (max-width: 1024px) and (min-width: 768px){
@@ -1691,11 +1672,7 @@ width: 60%;
         line-height: var(--line-height-s);
     }
 
-    .tag{
-        font-size: var(--text-xxs);
-        line-height: var(--line-height-xxs);
-        padding: var(--space-xxs) var(--space-s) 2px;
-    }
+   
 }
 
 @media (max-width: 767px) and (min-width: 480px){
@@ -1729,11 +1706,7 @@ width: 60%;
         line-height: var(--line-height-xs);
     }
 
-    .tag{
-        font-size: var(--text-xxs);
-        line-height: var(--line-height-xxs);
-        padding: var(--space-xxs) var(--space-s) 2px;
-    }
+    
 }
 
 @media (max-width: 479px) and (min-width: 320px){
@@ -1768,12 +1741,7 @@ width: 60%;
         line-height: var(--line-height-xs);
     }
 
-    .tag{
-        font-size: var(--text-xxs);
-        line-height: var(--line-height-xxs);
-        padding: var(--space-xxs) var(--space-s) 2px;
-    }
-
+    
 }
 
 
@@ -2076,11 +2044,20 @@ svg path, svg circle, svg rect {
     transition: font-size 0.5s ease, background-color 0.3s ease;
 }
 
+
 .imageBoxSmall{
     display: flex;
     width: 100%;
     height: 100%;
     cursor: pointer;
+    overflow: hidden;
+}
+
+.videoCaseThumbnail{
+    border-radius: 4px;
+    object-fit: cover;
+    overflow: hidden;
+    aspect-ratio: 1/1;
 }
 
 .titleWrapper{
@@ -2112,10 +2089,14 @@ svg path, svg circle, svg rect {
 .imageSmall{
     width: 100%;
     height: 100%;
-    border-radius: 4px;
     object-fit: cover;
+    border-radius: 4px;
     aspect-ratio: 1/1;
 }
+
+
+
+
 
 .caseNumber{
     font-family: var(--font-secondary);
@@ -3116,6 +3097,26 @@ main{
     transition: width 0.5s ease, padding 0.5 ease;
 }
 
+
+.videoContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: var(--space-big02) var(--space-big09);
+    background-color: var(--surface--00);
+}
+
+.videoWrapper{
+    background-color: var(--surface--00);
+}
+
+.videoCase{
+    max-width: 1440px;
+    border-radius: 4px;
+    background-color: var(--surface--00);
+}
+
 .primeraImagen{
     display: flex;
     flex-direction: column;
@@ -3129,7 +3130,7 @@ main{
 .caseImagesFull{
     width: 100%;
     height: 100%;
-    padding-bottom: var(--space-big09);
+    padding-bottom: var(--space-big02);
     object-fit: cover;
 }
 
@@ -3319,6 +3320,11 @@ iframe {
     .explanationLeft{
         padding: var(--space-big02) var(--space-none);
     }
+
+    .explanationRight{
+        padding: var(--space-big02) var(--space-none);
+    }
+
 
     .closeButton{
         top: 40px;
@@ -3760,3 +3766,5 @@ iframe {
         font-feature-settings: "zero" 1;
     }
 }
+
+

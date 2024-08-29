@@ -1038,7 +1038,7 @@
     <!----------------- bloque 1 ----------------->
     <div class="caseWrapper">
         <!--01-->
-        <div class="caseBox" id="openOverlay">
+        <div class="caseBox" id="openOverlay1">
             <div class="caseTitle">
                 <p class="caseNumber">01/</p>
                 <div class="titleWrapper">
@@ -1047,13 +1047,13 @@
                 </div>
             </div>
             <div class="imageBoxSmall">
-                <img class="imageSmall" src="./case01/miniatura01.png" alt="imagen de caso 01">
+                <img class="imageSmall" src="./assets/barsathumb.png" alt="imagen de caso 01">
             </div>
         </div>
 
         <div id="overlay">
             <div class="overlay-content">
-                <iframe id="iframePage" src="./fc-barcelona.html"></iframe>
+                <iframe id="iframePage" src="./cases-pages/fc-barcelona.html"></iframe>
             </div>
         </div>
 
@@ -1067,9 +1067,9 @@
                 });
             }
     
-            document.getElementById('openOverlay').addEventListener('click', function() {
+            document.getElementById('openOverlay1').addEventListener('click', function() {
                 const iframe = document.getElementById('iframePage');
-                iframe.src = './fc-barcelona.html'; // Carga la página en el iframe
+                iframe.src = './cases-pages/fc-barcelona.html'; // Carga la página en el iframe
     
                 // Mostrar el overlay y bloquear el scroll
                 document.getElementById('overlay').classList.add('show');
@@ -1093,7 +1093,7 @@
         
 
         <!--02-->
-        <div class="caseBox">
+        <div class="caseBox" id="openOverlay2">
             <div class="caseTitle">
                 <p class="caseNumber">02/</p>
                 <div class="titleWrapper">
@@ -1105,6 +1105,45 @@
                 <img class="imageSmall" src="./assets/iOS app dock.png" alt="imagen de caso 01">
             </div>
         </div>
+
+        <div id="overlay">
+            <div class="overlay-content">
+                <iframe id="iframePage" src="./cases-pages/cofares-design-system.html"></iframe>
+            </div>
+        </div>
+
+        <script>
+            function injectCSSIntoIframe(iframe) {
+                const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+                const styles = Array.from(document.querySelectorAll('link[rel="stylesheet"], style')).map(el => el.outerHTML);
+                styles.forEach(style => {
+                    iframeDocument.head.insertAdjacentHTML('beforeend', style);
+                });
+            }
+    
+            document.getElementById('openOverlay2').addEventListener('click', function() {
+                const iframe = document.getElementById('iframePage');
+                iframe.src = './cases-pages/cofares-design-system.html'; // Carga la página en el iframe
+    
+                // Mostrar el overlay y bloquear el scroll
+                document.getElementById('overlay').classList.add('show');
+                document.body.style.overflow = 'hidden';
+    
+                // Esperar a que el iframe esté completamente cargado antes de inyectar los estilos
+                iframe.onload = function() {
+                    injectCSSIntoIframe(iframe);
+                };
+            });
+    
+            window.addEventListener('message', function(event) {
+                if (event.data === 'closeOverlay') {
+                    document.getElementById('overlay').classList.remove('show'); // Ocultar el overlay
+                    document.body.style.overflow = ''; // Habilitar el scroll nuevamente
+                }
+            });
+    
+            
+        </script>
 
         <!--03-->
         <div class="caseBox">
