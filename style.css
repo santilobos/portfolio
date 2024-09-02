@@ -226,8 +226,9 @@
 
 
 body{
-    background-color: var(--surface--01);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    opacity: 0;
+    background-color: var(--surface--00);
+    transition: background-color 0.3s ease, color 0.3s ease, opacity 1s ease-in-out;
 }
 
 /* ------------- textos ------------- */
@@ -304,6 +305,8 @@ p{
     font-weight: var(--light);
     transition: font-size 0.5s ease, color 0.3s ease;
 }
+
+
 
 
 /* ------------- header ------------- */
@@ -722,13 +725,18 @@ button:hover{
 /* --------------------------------------------------- hero ---------------------------------------------------  */
 
 .hero{
+    opacity: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     background-color: var(--surface--01);
     padding: var(--space-mega) var(--space-big02) var(--space-mega);
-    transition: padding 0.5s ease, background-color 0.3s ease;
+    transition: padding 0.5s ease, background-color 0.3s ease, opacity 1s ease-in-out;
+}
+
+.hero.visible{
+    opacity: 1;
 }
 
 .contenedorArriba{
@@ -1084,6 +1092,7 @@ span{
 /* ------------- video section ------------- */
 
 .videoPlayer{
+    opacity: 0;
     width: 100%;
     height: 100%;
     display: flex;
@@ -1091,7 +1100,11 @@ span{
     align-items: center;
     overflow: hidden;
     aspect-ratio: 2/1;
-    transition: aspect-ratio 0.5 ease;
+    transition: aspect-ratio 0.5 ease, opacity 1s ease-in-out;
+}
+
+.videoPlayer.visible{
+    opacity: 1;
 }
 
 video{
@@ -1099,6 +1112,8 @@ video{
     height: 100%;
     object-fit: cover;
 }
+
+
 
 @media (max-width: 1440px) and (min-width: 1281px){
     .videoPlayer{
@@ -1150,12 +1165,17 @@ video{
 /* ------------- description ------------- */
 
 .descriptionWrapper{
+    opacity: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 100%;
     background-color: var(--surface--00);
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, opacity 1s ease-in-out;
+}
+
+.descriptionWrapper.visible{
+    opacity: 1;
 }
 
 
@@ -1165,7 +1185,7 @@ video{
     width: 100%;
     max-width: 1440px;
     background-color: var(--surface--00);
-    padding: var(--space-big02);
+    padding: var(--space-big09);
     transition: background-color 0.3s ease;
 }
 
@@ -1254,12 +1274,17 @@ width: 60%;
 /* ------------- card ------------- */
 
 .cardContainerWrapper{
+    opacity: 0;
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: center;
     background-color: var(--surface--00);
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, opacity 1s ease-in-out;
+}
+
+.cardContainerWrapper.visible{
+    opacity: 1;
 }
 
 .cardContainer{
@@ -1516,13 +1541,18 @@ width: 60%;
 /* ------------- skills ------------- */
 
 .skillContainerWrapper{
+    opacity: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
     background-color: var(--surface--00);
-    transition: background-color 0.3s ease, color 0.3s ease;
-    
+    transition: background-color 0.3s ease, color 0.3s ease, opacity 1s ease-in-out;
 }
+
+.skillContainerWrapper.visible{
+    opacity: 1;
+}
+
 
 .skillContainer{
     display: flex;
@@ -1755,13 +1785,18 @@ width: 60%;
 }
 
 .containerMarquee{
+    opacity: 0;
     background-color: var(--surface--00);
     display: flex;
     justify-content: center;
     flex-direction: row;
     width: 100vw;
     padding: var(--space-xl) var(--space-big02);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, opacity 1s ease-in-out;
+}
+
+.containerMarquee{
+    opacity: 1;
 }
 
 .wrapperMarquee{
@@ -1857,13 +1892,18 @@ svg path, svg circle, svg rect {
 }
 
 .techStack{
+    opacity: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
     background-color: var(--surface--00);
     width: 100%;
     padding: var(--space-xl) var(--space-big02);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, opacity 1s ease-in-out;
+}
+
+.techStack.visible{
+    opacity: 1;
 }
 
 .techWrapper{
@@ -2011,13 +2051,18 @@ svg path, svg circle, svg rect {
 /* ------------- cases ------------- */
 
 .caseContainer{
+    opacity: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: var(--surface--00);
     width: 100%;
     padding: var(--space-big02);
-    transition: padding 0.5s ease, background-color 0.3s ease, color 0.3s ease;
+    transition: padding 0.5s ease, background-color 0.3s ease, color 0.3s ease, opacity 1s ease-in-out;
+}
+
+.caseContainer.visible{
+    opacity: 1;
 }
 
 .caseWrapper{
@@ -2177,13 +2222,20 @@ svg path, svg circle, svg rect {
 
 /* ------------- footer ------------- */
 
-footer{
+.footerBlock{
+    opacity: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
     background-color: var(--surface--00);
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, opacity 1s ease-in-out;
 }
+
+
+.footerBlock.visible{
+    opacity: 1;
+}
+
 
 .footerElements{
     width: 100%;
@@ -2550,16 +2602,22 @@ footer{
 
 
 .infoContainer {
+    opacity: 0;
     background-color: var(--surface--00);
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     padding: var(--space-xl) var(--space-big02);
-    transition: background-color 0.3s ease, padding 0.5s ease, width 0.5s ease;
+    transition: background-color 0.3s ease, padding 0.5s ease, width 0.5s ease, opacity 1s ease-in-out;
+}
+
+.infoContainer.visible{
+    opacity: 1;
 }
 
 .infoWrapper {
+    opacity: 0;
     display: flex;
     flex-direction: row; 
     width: 100%;
@@ -2569,7 +2627,11 @@ footer{
     background-color: var(--surface--00);
     border-bottom: 1px solid var(--stroke--01);
     padding: var(--space-big08) var(--space-none);
-    transition: border-color 0.3s ease, background-color 0.3s ease, padding 0.5s ease, width 0.5s ease;
+    transition: border-color 0.3s ease, background-color 0.3s ease, padding 0.5s ease, width 0.5s ease, opacity 1s ease-in-out;
+}
+
+.infoWrapper.visible{
+    opacity: 1;
 }
 
 .infoWrapperSpecial {
@@ -3114,6 +3176,7 @@ main{
     max-width: 1440px;
     padding: var(--space-big02) var(--space-big09) var(--space-xl);
     transition: width 0.5s ease, padding 0.5 ease;
+    background-color: var(--surface--00);
 }
 
 .overviewLeft{
@@ -3122,6 +3185,7 @@ main{
     width: 100%;
     transition: width 0.5s ease;
     gap: var(--space-m);
+    background-color: var(--surface--00);
 }
 .overviewRight{
     display: flex;
@@ -3129,6 +3193,7 @@ main{
     width: 100%;
     transition: width 0.5s ease;
     gap: var(--space-m);
+    background-color: var(--surface--00);
 }
 
 .modulos{
@@ -3143,6 +3208,7 @@ main{
 
 .modulosWrapper{
     max-width: 1440px;
+    background-color: var(--surface--00);
 }
 
 .box{
@@ -3455,7 +3521,10 @@ iframe {
     text-transform: uppercase;
 }
 
-
+.categorie{
+    font-family: var(--font-secondary);
+    font-weight: var(--regular);
+}
 
 
 @media (max-width: 6000px) and (min-width: 1441px){
