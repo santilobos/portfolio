@@ -1231,6 +1231,10 @@ width: 60%;
         padding: var(--space-big02) var(--space-s) ;
     }
 
+    .descriptionCase{
+        padding: var(--space-big02) var(--space-s) var(--space-xl)  ;
+    }
+
     .paragraph{
         width: 100%;
         }
@@ -1241,6 +1245,10 @@ width: 60%;
    
     .description{
         padding: var(--space-big02) var(--space-s) ;
+    }
+
+    .descriptionCase{
+        padding: var(--space-big02) var(--space-s) var(--space-xl)  ;
     }
 
     .paragraph{
@@ -1261,6 +1269,11 @@ width: 60%;
         padding: var(--space-big02) var(--space-s) ;
     }
 
+    .descriptionCase{
+        flex-direction: column;
+        padding: var(--space-big02) var(--space-s) var(--space-xl)  ;
+    }
+
     .paragraph{
 
         margin-top: var(--space-m);
@@ -1278,6 +1291,11 @@ width: 60%;
    
 
     .description{
+        flex-direction: column;
+        padding: var(--space-big02) var(--space-s) var(--space-xl)  ;
+    }
+
+    .descriptionCase{
         flex-direction: column;
         padding: var(--space-big02) var(--space-s) var(--space-xl)  ;
     }
