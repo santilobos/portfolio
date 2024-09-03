@@ -1201,6 +1201,16 @@ video{
     transition: background-color 0.3s ease;
 }
 
+.descriptionCase{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1440px;
+    background-color: var(--surface--00);
+    padding: var(--space-big09) var(--space-big09) var(--space-none);
+    transition: background-color 0.3s ease;
+}
+
 .paragraph{
 
 margin-top: var(--space-m);
@@ -1572,7 +1582,7 @@ width: 60%;
     background-color: var(--surface--00);
     width: 100%;
     max-width: 1440px;
-    padding: var(--space-none) var(--space-big02) var(--space-xl);
+    padding: var(--space-none) var(--space-big09) var(--space-xl);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -2109,6 +2119,14 @@ svg path, svg circle, svg rect {
     aspect-ratio: 1/1;
     position: relative;
     cursor: pointer;
+    overflow: hidden;
+}
+
+.imageBoxSmall2{
+    width: 100%;
+    border-radius: 4px;
+    aspect-ratio: 1/1;
+    position: relative;
     overflow: hidden;
 }
 
@@ -3225,6 +3243,7 @@ main{
 
 .box{
     display: flex;
+    width: 100%;
     flex-direction: column;
     gap: var(--space-s);
 }
