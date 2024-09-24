@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cofares - Pill Design System</title>
+    <style>
+        /* Ocultar todo el contenido hasta que el tema se aplique */
+        body.hidden-content {
+            display: none;
+        }
+    </style>
+    <script>
+        // Determinar el tema actual y aplicarlo antes de mostrar el contenido
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+
+            // Asegurarse de que el tema se aplique antes de mostrar el contenido
+            document.body.classList.remove('hidden-content');
+
+            // Actualizar el icono del tema si es necesario
+            const icon = document.getElementById('themeIcon');
+            if (icon) {
+                icon.textContent = savedTheme === 'light' ? "dark_mode" : "light_mode";
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="iframe-content">
+
+    <script>
+        window.addEventListener('load', function() {
+          document.body.style.opacity = '1';
+        });
+      </script>
+      
+    <main>
+
+       
+            <button class="closeButton" id="closeOverlay">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="12px" fill="var(--item--01)"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+                <p class="closeTag">close</p>
+            </button>
+
+            
+            <script>
+                // Manejar el clic en el botón de cierre para comunicar al padre
+                document.getElementById('closeOverlay').addEventListener('click', function() {
+                    // Comunicar al padre para cerrar el overlay
+                    window.parent.postMessage('closeOverlay', '*');
+                });
+            </script>
+    
+        
+       
+        <!-------------------------- intro case -------------------------->
+        <section class="introCase">
+            
+            <div class="caseIntroLeft">
+               
+            </div>
+
+            <div class="caseIntroRight">
+                <div class="detail">
+                    <div class="introDetail">
+                        <p class="titleIntroCase">Building a Framework Agnostic Design System by Cofares</p>
+                    </div>
+                    <p class="parrafoIntro">An agnostic design system is an ideal that allows us to design and implement once with the focus always on multiple platforms. This project was born with the objective of helping product teams, both designers and developers, to speak the same language favoring consistency and scalability of products while reducing effort and time, which translates directly into substantial cost savings.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-------------------------- contenedor imagen -------------------------->
+
+        <section class="imageContainerFull">
+            <img class="caseImagesFull" src="../case02/pill01.png" alt="Imagen de fondo del proyecto Pill">
+        </section>
+
+        <!-------------------------- Oveview -------------------------->
+
+        <section class="overviewWrapper">
+
+            <div class="overviewContainer">
+                <div class="explanationLeft"></p>
+                </div>
+                <div class="overviewRight">
+                    <h4>THE CHALLENGE</h4>
+                    <p>COFARES is the leading company in the distribution of medicines in Spain. A cooperative for the distribution of medicines, health products and services with pharmaceutical capital. This distribution and sale of medicines is done through different digital channels, and it is right here where the main problem lies. Each product is designed and developed by different teams using different methodologies and technologies.</p>
+                    <p> For this reason I was hired to build from scratch the new design system of the company, a system that is able to provide consistency and scalability to all products and teams regardless of the technology used. This is where the new technology agnostic design system was born. </p> 
+                    <div class="clientInfo">
+                        <div class="clientInfoWrapper">
+                            <div class="infoLeft">
+                                <p class="categorie">AGENCY</p>
+                            </div>
+                            <div class="infoRight">
+                                <p class="categorie">GENERAL SOFTWARE</p>
+                            </div>
+                        </div>
+                        <div class="clientInfoWrapper">
+                            <div class="infoLeft">
+                                <p class="categorie">CLIENT</p>
+                            </div>
+                            <div class="infoRight">
+                                <p class="categorie">COFARES</p>
+                            </div>
+                        </div>
+                        <div class="clientInfoWrapper">
+                            <div class="infoLeft">
+                                <p class="categorie">ROLE</p>
+                            </div>
+                            <div class="infoRight">
+                                <p class="categorie">DESIGN SYSTEM ARCHITECT</p>
+                            </div>
+                        </div>
+                        <div class="clientInfoWrapper">
+                            <div class="infoLeft">
+                                <p class="categorie">YEAR</p>
+                            </div>
+                            <div class="infoRight">
+                                <p class="categorie">2023 - 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="modulos">
+            <div class="modulosWrapper">
+                <div class="modulosIzquierda">
+                    <div class="box">
+                        <p class="boxTag">Overview</p>
+                        <p>In an environment of chaos and lack of structure and working procedures, the main task was to establish design principles and best practices across all products to ensure consistency and scalability of all products.</p>
+                    </div>
+                    <div class="box">
+                        <p class="boxTag">Problem definition</p>
+                        <p>The lack of an aligned and systematized design and development methodology and the production of isolated screens with a short-term vision generate problems when it comes to validating the user experience and product iterations.</p>
+                    </div>
+                </div>
+                <div class="modulosDerecha">
+                    <div class="box">
+                        <p class="boxTag">Methodology</p>
+                        <p>We work following the atomic design methodology created by Brad Frost, which allows us to build consistent and scalable design systems, aligning the different work teams and considerably saving effort and budget.</p>
+                    </div>
+                    <div class="box">
+                        <p class="boxTag">Design proposal</p>
+                        <p>We create a library of components based on foundations and design tokens communicated through the figma api with the development repository where they will be built using html, css and javascript.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-------------------------- Flujo de trabajo DS -------------------------->
+
+         <section class="explanationWrapper">
+            <div class="explanationsContainer">
+                <div class="explanationLeft">
+                    <h4>An agnostic design system created and tailored from scratch</h4>
+                    <p>The concept of this design system, as if it were a pill, is based on the idea of offering solutions and well-being to those who use it, thanks to the active ingredients contained inside.  These active ingredients, which are apparently unseen and not tangible, turn out to be the basic and fundamental elements on which the company's entire digital ecosystem is based and functions.</p>
+                    <p>Each component in Pill is like an active agent: efficient, precise and essential for everything to function optimally. Within it lies the solution to the design and development challenges inside the pharmaceutical sector, adapting to the technological needs of a constantly evolving environment.</p>
+                    <p>This diagram shows the design system infrastructure that supports the various design and development teams.</p>
+                </div>
+                <div class="explanationRight">
+                </div>
+            </div>
+        </section>
+
+         
+        <section class="imageContainer">
+            <img class="caseImages" src="../case02/arquitectura-DS.jpg" alt="Esquema detallado de la estructura del sistema de diseño">
+        </section>
+
+        <!-------------------------- Technology -------------------------->
+
+        <section class="explanationWrapper">
+            <div class="explanationsContainer">
+                <div class="explanationLeft"></p>
+                </div>
+                <div class="explanationRight">
+                    <h4>An framework agnostic design system created and tailored from scratch</h4>
+                    <p>To create a framework-agnostic design system, it's means, a system that can be used in different development environments and frameworks (such as React, Angular, Vue, or even in projects without a framework), it is recommended to use fundamental technologies such as HTML5, CSS3 and JavaScript for several reasons:</p>
+                    <p></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="imageContainer">
+            <img class="caseImages" src="../case02/tech-stack.jpg" alt="Principios de diseño establecidos en workshop con cliente">
+        </section>
+
+        <!-------------------------- Metodologia Atomic Design -------------------------->
+
+        <section class="explanationWrapper">
+            <div class="explanationsContainer">
+                <div class="explanationLeft">
+                    <h4>Building our design system in a structured and efficient way through Atomic Design</h4>
+                    <p>Atomic Design is a methodology for creating modular and scalable design systems, proposed by Brad Frost. It is based on the idea of building user interfaces by breaking them down into reusable components, similar to how atoms form molecules and organisms in nature. Atomic Design allows the development of consistent design systems, where each piece is clearly defined and can be reused in different contexts.</p>
+                </div>
+                <div class="explanationRight">
+                </div>
+            </div>
+        </section>
+
+         
+        <section class="imageContainer">
+            <img class="caseImages" src="../case02/atomic-design.jpg" alt="Imagen de las foundations del sistema de diseño">
+        </section>
+
+        <!-------------------------- Principios de disenio -------------------------->
+
+        <section class="explanationWrapper">
+            <div class="explanationsContainer">
+                <div class="explanationLeft">
+                </div>
+                <div class="explanationRight">
+                    <h4>Defining Design System Principles</h4>
+                    <p>Principles are the practical, hard and opinionated rules that guide decision making. They reinforce core values and help decisions move in a consistent direction. They apply to component creation, governance, maintenance, and being a teammate that supports design systems. They are a benchmark against which we can measure ourselves to be aware of change as the project matures.</p>
+                    <p>After a collaborative session with different areas of the company, we defined the following design principles.</p>
+                </div>
+            </div>
+        </section>
+
+         
+        <section class="imageContainer">
+            <img class="caseImages" src="../case02/design-principles.jpg" alt="Imagen de los principios de diseño del sistema de diseño">
+        </section>
+
+         <!-------------------------- Design foundations -------------------------->
+
+         <section class="explanationWrapper">
+            <div class="explanationsContainer">
+                <div class="explanationLeft">
+                    <h4>Defining the bases of our design system</h4>
+                    <p>Foundations are the styles, effects and structure that govern the creation of components within the design system. They are aligned with branding, accessibility and UX best practices to achieve an equitable and unified experience.</p>
+                    <p>We work closely with the client to define these foundations according to the brand guidelines of each of the company's digital products. This is the result of the workshop.</p>
+                </div>
+                <div class="explanationRight">
+                </div>
+            </div>
+        </section>
+
+
+        <section class="imageContainer">
+            <img class="caseImages" src="../case02/design-foundations.jpg" alt="Imagen de las design foundations del sistema de diseño">
+        </section>
+
+         <!-------------------------- Design tokens -------------------------->
+
+         <section class="explanationWrapper">
+            <div class="explanationsContainer">
+                <div class="explanationLeft">
+                </div>
+                <div class="explanationRight">
+                    <h4>Using BEM methodology for the definition of our design tokens</h4>
+                    <p>BEM (Block, Element, Modifier) is a naming methodology used to organize and structure CSS code in a clear and predictable way, and can be applied in the definition of design tokens. In the context of design tokens, BEM helps to name and categorize styles in a hierarchical manner, facilitating their identification and use in reusable components. Its main benefits include improved code readability, consistency in style mapping and scalability, which allows working on large projects without CSS becoming chaotic. It also promotes modularity and maintainability by keeping styles isolated and easily modifiable.</p>
+                    <p></p>
+                </div>
+            </div>
+        </section>
+
+         
+        <section class="imageContainer">
+            <img class="caseImages" src="../case02/naming-convention.jpg" alt="Imagen de la nomenclatura de tokens del sistema de diseño">
+        </section>
+
+
+
+         <!-------------------------- Flujo tokens -------------------------->
+
+         <section class="explanationWrapper">
+            <div class="explanationsContainer">
+                <div class="explanationLeft"></p>
+                </div>
+                <div class="explanationRight">
+                    <h4>We create design tokens so they can be used on multiple platforms.</h4>
+                    <p>From the beginning it was clear to us that we wanted to define a workflow that would allow us to be agile when dealing with interface iterations in the products. To do this we synchronized the design tokens with the development variables through the Figma API, which allows us to make changes in one place to be modified in the other. This way we always keep the libraries up to date.</p>
+
+                    <p>We also used the Style Dictionary tool, which allowed us to export the design tokens in variables of different languages to be used as needed.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="imageContainer">
+            <img class="caseImages" src="../case02/flujo-tokens.jpg" alt="Imagen del flujo para la creacion de tokens del sistema de diseño">
+        </section>
+
+
+        <!-------------------------- Tokens visual studio -------------------------->
+
+        <section class="explanationWrapper">
+            <div class="explanationsContainer">
+                <div class="explanationLeft">
+                    <h4>One Set of Design Tokens to Rule Them All with Style Dictionary</h4>
+                    <p>Style Dictionary is a tool that allows you to manage and export design tokens to different platforms and languages, such as CSS, JSON, Android, iOS or web. Its main advantage is that it centralizes the definition of tokens, facilitating consistency in designs regardless of the technology used. In addition, it allows automating the export process, ensuring that changes are reflected in all platforms simultaneously. This improves scalability and design maintenance, as any updates to the tokens are applied in a unified manner. Finally, it ensures that design and development teams work with the same sources of truth. </p>
+                </div>
+                <div class="explanationRight">
+                </div>
+            </div>
+        </section>
+
+        <section class="imageContainer">
+            <img class="caseImages" src="../case02/flujo-tokens-VSCODE.jpg" alt="Imagen del flujo para la creacion de tokens del sistema de diseño">
+        </section>
+
+
+
+        <!-------------------------- Disenio de componentes -------------------------->
+
+        <section class="explanationWrapper">
+            <div class="explanationsContainer">
+                <div class="explanationLeft">
+                </div>
+                <div class="explanationRight">
+                    <h4>Component Design Process: Ingredients to Achieve Functional Structures</h4>
+                    <p>The process of creating components in Figma begins with extensive research. First, we turn to the Mozilla Developer documentation to understand the structure and functionality of the components we wish to design. This documentation provides us with valuable information on best practices and essential elements to include.</p>
+                    <p>Then, in Figma, we elaborate the properties and variants of the component, allowing us to define different states and configurations in a clear and organized way. Finally, we integrate all this information to create a user interface (UI) version of the component, ensuring that it is consistent, functional and ready for implementation in the final product. This methodical approach not only improves design quality, but also facilitates collaboration and long-term maintenance.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="imageContainer">
+            <img class="caseImages" src="../case02/diseño-componentes.jpg" alt="Imagen del preceso de construccion de componentes en Figma">
+        </section>
+
+        <!-------------------------- Desarrollo componentes -------------------------->
+
+        <section class="explanationWrapper">
+            <div class="explanationsContainer">
+                <div class="explanationLeft"></p>
+                </div>
+                <div class="explanationRight">
+                    <h4>Design Tokens applied to Button Components: Consistency, Maintainability and Scalability</h4>
+                    <p>Using design tokens in the button components provides several key advantages. In the first component, which uses the pf namespace, and in the second, which uses wn, the tokens enable visual consistency by applying consistent styles across both buttons, even if they belong to different themes or layout variants. This simplifies maintenance, as any adjustments to the tokens are automatically reflected in both components, ensuring that all design changes are quick and effective. In addition, by using design tokens, collaboration between designers and developers is improved, as they can speak the same language in terms of styles.</p>
+                    <p>Tokens also facilitate scalability, allowing the creation of new buttons or components in the future without the need to redefine styles from scratch. Finally, incorporating accessibility principles into tokens ensures that both buttons are functional and inclusive for all users.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="imageContainer">
+            <img class="caseImages" src="../case02/desarrollo-componentes.jpg" alt="Ejemplo de desarrollo en react component button">
+        </section>
+
+
+
+        <!--
+
+        <section class="resultados">
+            <div class="resultadosContainer">
+                <div class="resultadosLeft">
+                    <h6>Resultados</h6>
+                </div>
+                <div class="resultadosRight">
+                    <div class="resultadoWrapper">
+                        <p class="numberResultado">3x</p>
+                        <p>Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.</p>
+                    </div>
+    
+                    <div class="resultadoWrapper">
+                        <p class="numberResultado">3x</p>
+                        <p>Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.</p>
+                    </div>
+    
+                    <div class="resultadoWrapper">
+                        <p class="numberResultado">3x</p>
+                        <p>Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.Redisenio de la app de socios del club con una interfaz adaptada al nuevo sistema de disenio y una experiencia de usuario a la altura del club.</p>
+                    </div>
+                </div>    
+            </div>     
+        </section>
+
+        -->
+
+        <div class="marqueeCase">
+            <ol class="marqueeWrapper2">
+                <li class="itemMarquee">// COFARES</li>
+                <li class="itemMarquee">// NEW FRAMEWORK AGNOSTIC DESIGN SYSTEM</li>
+                <li class="itemMarquee">// COFARES</li>
+                <li class="itemMarquee">// NEW FRAMEWORK AGNOSTIC DESIGN SYSTEM</li>
+                <li class="itemMarquee">// COFARES</li>
+                <li class="itemMarquee">// NEW FRAMEWORK AGNOSTIC DESIGN SYSTEM</li>
+                <li class="itemMarquee">// COFARES</li>
+                <li class="itemMarquee">// NEW FRAMEWORK AGNOSTIC DESIGN SYSTEM</li>
+                <li class="itemMarquee">// COFARES</li>
+                <li class="itemMarquee">// NEW FRAMEWORK AGNOSTIC DESIGN SYSTEM</li>
+                <li class="itemMarquee">// COFARES</li>
+                <li class="itemMarquee">// NEW FRAMEWORK AGNOSTIC DESIGN SYSTEM</li>
+                <li class="itemMarquee">// COFARES</li>
+                <li class="itemMarquee">// NEW FRAMEWORK AGNOSTIC DESIGN SYSTEM</li>
+                <li class="itemMarquee">// COFARES</li>
+                <li class="itemMarquee">// NEW FRAMEWORK AGNOSTIC DESIGN SYSTEM</li>
+                <li class="itemMarquee">// COFARES</li>
+                <li class="itemMarquee">// NEW FRAMEWORK AGNOSTIC DESIGN SYSTEM</li>
+                <li class="itemMarquee">// COFARES</li>
+                <li class="itemMarquee">// NEW FRAMEWORK AGNOSTIC DESIGN SYSTEM</li>
+                <li class="itemMarquee">// COFARES</li>
+                <li class="itemMarquee">// NEW FRAMEWORK AGNOSTIC DESIGN SYSTEM</li>
+                <li class="itemMarquee">// COFARES</li>
+                <li class="itemMarquee">// NEW FRAMEWORK AGNOSTIC DESIGN SYSTEM</li>
+            </ol>
+            <div class="dotEmpty"></div>
+        </div>
+
+    </main>
+</body>
+</html>
