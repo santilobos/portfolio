@@ -824,6 +824,13 @@ span{
     transition: width 0.5s ease;
 }
 
+.rightWrapper2{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transition: width 0.5s ease;
+}
+
 .marqueeContainer{
     width: 20vw;
     overflow: hidden;
