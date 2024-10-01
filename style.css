@@ -3609,6 +3609,10 @@ iframe {
         padding: var(--space-big02) var(--space-none);
     }
 
+    .explanationWrapper{
+        padding: var(--space-xl) var(--space-big09);
+        background-color: var(--surface--00);
+    }
 
     .closeButton{
         top: 40px;
